@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://172.17.0.4:3306/movie?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:mysql://mysql-container:3306/movie?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
     password: 1234
   application:
@@ -13,7 +13,7 @@ spring:
 eureka:
   instance:
 
-    instance-id: 172.17.0.6:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.application.instance_id}:${spring.application.instance_id:${random.value}}
   client:
     service-url:
-      defaultZone: http://172.17.0.3:8761/eureka
+      defaultZone: http://movie-discovery-service-1:8761/eureka
