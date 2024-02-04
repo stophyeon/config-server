@@ -11,7 +11,7 @@ spring:
     name: member-api
 jpa:
   hibernate:
-    ddl-auto: creaete
+    ddl-auto: create
 eureka:
   instance:
 
