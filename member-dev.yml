@@ -9,7 +9,9 @@ spring:
     password: 1234
   application:
     name: member-api
-
+jpa:
+  hibernate:
+    ddl-auto: creaete
 eureka:
   instance:
 
