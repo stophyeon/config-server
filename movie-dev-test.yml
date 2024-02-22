@@ -1,0 +1,19 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://movie-mysql-container-1:3306/movie?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+  application:
+    name: movie-api
+
+eureka:
+  instance:
+
+    instance-id: ${spring.application.hostname}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://movie-discovery-service-1:8761/eureka
