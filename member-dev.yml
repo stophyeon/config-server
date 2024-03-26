@@ -1,17 +1,20 @@
-server:
-  port: 0
-
 spring:
+  config:
+    activate:
+      on-profile: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://movie-mysql-container-1:3306/movie?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:mysql://local-mysql:3306/darakbang?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
-    password: 1234
+    password : 1234
   application:
-    name: member-api
-jpa:
-  hibernate:
-    ddl-auto: create
+    name: member
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+      show_sql: true
 eureka:
   instance:
 
