@@ -30,7 +30,7 @@ spring:
           predicates:
             - Path=/product
           filters:
-            - name: JwtAuthenticationGatewayFilterFactory 
+            - name: JwtAuthentication
               args: 
                 headerName: Authorization
                 granted: Bearer
@@ -39,7 +39,7 @@ spring:
           predicates:
             - Path=/PAYMENTS/**
           filters:
-            - name: JwtAuthenticationGatewayFilterFactory 
+            - name: JwtAuthentication 
               args: 
                 headerName: Authorization
                 granted: Bearer
