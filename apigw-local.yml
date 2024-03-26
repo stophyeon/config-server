@@ -17,9 +17,15 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/member/**
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
             - Path=/oauth2/**
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
             - Path=/follow/**
-        - id: MOVIE-API
+        - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
             - Path=/product/**
