@@ -42,7 +42,7 @@ spring:
         - id: PURCHASE-API
           uri: lb://PURCHASE-API
           predicates:
-            - Path=/PAYMENTS/**
+            - Path=/payments/**
           filters:
             - name: JwtAuthentication 
               args: 
