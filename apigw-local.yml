@@ -33,7 +33,7 @@ spring:
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
-            - Path=/product
+            - Path=/product/**
           filters:
             - name: JwtAuthentication
               args: 
