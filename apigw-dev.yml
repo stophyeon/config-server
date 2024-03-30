@@ -6,7 +6,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://movie-discovery-service-1:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 spring:
   application:
     name: API-GW
@@ -17,9 +17,47 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/member/**
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
             - Path=/oauth2/**
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
             - Path=/follow/**
-        - id: MOVIE-API
+          filters:
+            - name: JwtAuthentication
+              args: 
+                headerName: Authorization
+                granted: Bearer
+        
+        - id: PRODUCT-API
+          uri: lb://PRODUCT-API
+          predicates:
+            - Path=/product/page
+        
+        - id: PRODUCT-API
+          uri: lb://PRODUCT-API
+          predicates:
+            - Path=/product/detail
+        
+        - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
             - Path=/product/**
+          filters:
+            - name: JwtAuthentication
+              args: 
+                headerName: Authorization
+                granted: Bearer
+        - id: PURCHASE-API
+          uri: lb://PURCHASE-API
+          predicates:
+            - Path=/payments/**
+          filters:
+            - name: JwtAuthentication 
+              args: 
+                headerName: Authorization
+                granted: Bearer
+jwt:
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
