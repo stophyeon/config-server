@@ -14,7 +14,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://purchase-db:3306/paymentandpointdb?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://purchase-db:3307/paymentandpointdb?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 1234
   application:
