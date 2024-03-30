@@ -1,7 +1,9 @@
 server:
-  port: 6080h
+  port: 6080
 spring:
-  
+  config:
+    activate:
+      on-profile: dev
   jpa:
     hibernate:
       ddl-auto: none
@@ -15,4 +17,11 @@ spring:
     url: jdbc:mysql://purchase-db:3306/paymentandpointdb?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 1234
-
+  application:
+    name: purchase
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
