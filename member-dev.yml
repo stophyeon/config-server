@@ -15,8 +15,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-
-      show_sql: true
+    properties:
+      hibernate:
+        show_sql: true
 eureka:
   instance:
 
