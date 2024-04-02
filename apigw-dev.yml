@@ -14,7 +14,7 @@ spring:
     name: API-GW
   cloud:
     gateway:
-    globalcors:
+      globalcors:
         corsConfigurations:
           '[/**]':
             allowedOrigins: "http://localhost:3000"
