@@ -14,7 +14,28 @@ spring:
     name: API-GW
   cloud:
     gateway:
+    globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders:
+              - x-requested-with
+              - authorization
+              - content-type
+              - credential
+              - X-AUTH-TOKEN
+              - X-CSRF-TOKEN
+            allowedMethods:
+              - POST
+              - GET
+              - PUT
+              - OPTIONS
+              - DELETE
       routes:
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
+            - Path=/nick_name/**
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
