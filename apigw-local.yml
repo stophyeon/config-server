@@ -16,7 +16,7 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/member/profile
+            - Path=/member/profile/**
           filters:
             - name: JwtAuthentication
               args: 
