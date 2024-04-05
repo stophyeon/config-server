@@ -3,7 +3,7 @@ server:
 spring:
   servlet:
     multipart:
-      location: c:\\profile\\
+      location: c:\profile\
       max-file-size: 128MB
       max-request-size: 128MB
       enabled: true
