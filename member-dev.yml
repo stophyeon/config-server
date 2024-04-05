@@ -1,8 +1,8 @@
 server:
   port: 8080
 spring:
-    cloud:
-    gcp:
+  cloud:
+  gcp:
       storage:
         credentials:
           location: classpath:/darakbang-3b7415068a92.json
