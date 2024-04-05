@@ -1,14 +1,13 @@
 server:
   port: 8080
 spring:
-  cloud:
-      gcp:
-        storage:
-          credentials:
-	      location: classpath:/darakbang-3b7415068a92.json
-	project-id: darakbang
-	bucket: darakban-img
-	  
+    cloud:
+    gcp:
+      storage:
+        credentials:
+          location: classpath:/darakbang-3b7415068a92.json
+        project-id: darakbang
+        bucket: darakban-img
   servlet:
     multipart:
       max-file-size: 128MB
