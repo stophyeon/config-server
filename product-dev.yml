@@ -1,6 +1,13 @@
 server:
   port: 7080
 spring:
+  cloud:
+    gcp:
+      storage:
+        credentials:
+          location: classpath:/darakbang-3b7415068a92.json
+        project-id: darakbang
+        bucket: darakban-img
   config:
     activate:
       on-profile: dev
