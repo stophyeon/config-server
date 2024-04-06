@@ -5,35 +5,35 @@ spring:
     gcp:
       storage:
         credentials:
-	  location: classpath:/darakbang-3b7415068a92.json
-	project-id: darakbang
-	bucket: darakban-img
+          location: classpath:/darakbang-3b7415068a92.json
+        project-id: darakbang
+        bucket: darakban-img
   servlet:
-    multipart:
-      max-file-size: 128MB
-      max-request-size: 128MB
-      enabled: true
+      multipart:
+        max-file-size: 128MB
+        max-request-size: 128MB
+        enabled: true
   config:
-    activate:
-      on-profile: local
- 
+      activate:
+        on-profile: local
+    
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/darakbang?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-
-    username: root
-    password : 990531
-
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/darakbang?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+      
+      username: root
+      password : 990531
+    
   application:
-    name: member-api
-
-
+      name: member-api
+    
+    
   jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
       hibernate:
-        show_sql: true
+        ddl-auto: update
+      properties:
+        hibernate:
+          show_sql: true
 eureka:
   instance:
 
@@ -43,4 +43,3 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 jwt:
   secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
-
