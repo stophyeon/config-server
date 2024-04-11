@@ -6,7 +6,7 @@ spring:
       on-profile: local
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
     properties:
