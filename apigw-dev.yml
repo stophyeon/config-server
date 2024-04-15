@@ -71,7 +71,10 @@ spring:
               args: 
                 headerName: Authorization
                 granted: Bearer
-        
+        - id: PRODUCT-API
+          uri: lb://PRODUCT-API
+          predicates:
+            - Path=/product/mypage
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
