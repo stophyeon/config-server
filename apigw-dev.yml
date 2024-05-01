@@ -44,7 +44,7 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/member/payments/**
+            - Path=/member/logout/**
           filters:
             - name: JwtAuthentication
               args: 
@@ -53,7 +53,12 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/nick_name/**
+            - Path=/member/payments/**
+          filters:
+            - name: JwtAuthentication
+              args: 
+                headerName: Authorization
+                granted: Bearer
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
@@ -71,6 +76,15 @@ spring:
               args: 
                 headerName: Authorization
                 granted: Bearer
+        
+        - id: PRODUCT-API
+          uri: lb://PRODUCT-API
+          predicates:
+            - Path=/product/page
+        - id: PRODUCT-API
+          uri: lb://PRODUCT-API
+          predicates:
+            - Path=/product/search/**
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
@@ -78,16 +92,8 @@ spring:
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
-            - Path=/product/page
+            - Path=/product/detail
         
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
-          predicates:
-            - Path=/product/detail/**
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
-          predicates:
-            - Path=/product/search/**
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
