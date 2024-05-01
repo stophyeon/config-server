@@ -7,7 +7,7 @@ spring:
         credentials:
           location: classpath:/darakbang-3b7415068a92.json
         project-id: darakbang
-        bucket: darakban-img
+        bucket: darakbang-img
   servlet:
       multipart:
         max-file-size: 128MB
