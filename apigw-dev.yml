@@ -84,12 +84,12 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/follow/follower
+            - Path=/follow/follower/**
           
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/follow/following
+            - Path=/follow/following/**
           
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
