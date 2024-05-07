@@ -75,9 +75,30 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/follow/**
-          
-        
+            - Path=/follow
+          filters:
+            - name: JwtAuthentication
+              args: 
+                headerName: Authorization
+                granted: Bearer
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
+            - Path=/follow/follower
+          filters:
+            - name: JwtAuthentication
+              args: 
+                headerName: Authorization
+                granted: Bearer
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
+            - Path=/follow/following
+          filters:
+            - name: JwtAuthentication
+              args: 
+                headerName: Authorization
+                granted: Bearer
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
