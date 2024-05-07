@@ -36,11 +36,7 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/member/profile/**
-          filters:
-            - name: JwtAuthentication
-              args: 
-                headerName: Authorization
-                granted: Bearer
+         
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
@@ -71,11 +67,7 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/follow/**
-          filters:
-            - name: JwtAuthentication
-              args: 
-                headerName: Authorization
-                granted: Bearer
+          
         
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
@@ -92,12 +84,7 @@ spring:
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
-            - Path=/product/detail
-          filters:
-            - name: JwtAuthentication
-              args: 
-                headerName: Authorization
-                granted: Bearer
+            - Path=/product/like/**
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
           predicates:
