@@ -16,12 +16,16 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/member/profile/**
+            - Path=/member/profile
           filters:
             - name: JwtAuthentication
               args: 
                 headerName: Authorization
                 granted: Bearer
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
+            - Path=/member/profile/other/**
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
@@ -52,11 +56,7 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/follow/**
-          filters:
-            - name: JwtAuthentication
-              args: 
-                headerName: Authorization
-                granted: Bearer
+          
         
         - id: PRODUCT-API
           uri: lb://PRODUCT-API
