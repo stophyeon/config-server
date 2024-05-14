@@ -80,6 +80,10 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/oauth2/**
+         - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
+            - Path=/kakao/logout
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
