@@ -45,6 +45,10 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
+            - Path=/email
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
             - Path=/nick_name
         - id: MEMBER-API
           uri: lb://MEMBER-API
