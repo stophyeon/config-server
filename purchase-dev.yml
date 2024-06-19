@@ -14,7 +14,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://Kpass-purchase-db-1:3306/payment?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://kpass-purchase-db-1:3306/payment?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 1234
   application:
