@@ -22,6 +22,7 @@ spring:
               args: 
                 headerName: Authorization
                 granted: Bearer
+        
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
@@ -115,14 +116,14 @@ spring:
               args: 
                 headerName: Authorization
                 granted: Bearer
-         - id: PURCHASE-API
-           uri: lb://PURCHASE-API
-           predicates:
-             - Path=/payments/**
-           filters:
-             - name: JwtAuthentication 
-               args: 
-                 headerName: Authorization
-                 granted: Bearer
+        - id: PURCHASE-API
+          uri: lb://PURCHASE-API
+          predicates:
+            - Path=/payments/**
+          filters:
+            - name: JwtAuthentication 
+              args: 
+                headerName: Authorization
+                granted: Bearer
 jwt:
   secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
