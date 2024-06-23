@@ -100,6 +100,10 @@ spring:
           predicates:
             - Path=/post/mypage
         - id: POST-API
+          uri: lb://PRODUCT-API
+          predicates:
+            - Path=/post/profile/like/**
+        - id: POST-API
           uri: lb://POST-API
           predicates:
             - Path=/post/detail
