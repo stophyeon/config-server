@@ -42,14 +42,16 @@ spring:
               args: 
                 headerName: Authorization
                 granted: Bearer
-        - id: MEMBER-API
-          uri: lb://MEMBER-API
-          predicates:
-            - Path=/email
+        
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
             - Path=/nick_name
+          filters:
+            - name: JwtAuthentication
+              args: 
+                headerName: Authorization
+                granted: Bearer
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
@@ -88,10 +90,6 @@ spring:
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
-            - Path=/kakao/logout
-        - id: MEMBER-API
-          uri: lb://MEMBER-API
-          predicates:
             - Path=/follow
           filters:
             - name: JwtAuthentication
@@ -107,40 +105,41 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/follow/following/**
-          
-        - id: PRODUCT-API
+        
+        - id: POST-API
           uri: lb://PRODUCT-API
           predicates:
-            - Path=/product/page
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
+            - Path=/post/page
+        
+        - id: POST-API
+          uri: lb://POST-API
           predicates:
-            - Path=/product/emails/**
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
+            - Path=/post/search/**
+        - id: POST-API
+          uri: lb://POST-API
           predicates:
-            - Path=/product/search/**
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
+            - Path=/post/mypage
+        - id: POST-API
+          uri: lb://POST-API
           predicates:
-            - Path=/product/mypage
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
+            - Path=/post/profile/like/**
+        - id: POST-API
+          uri: lb://POST-API
           predicates:
-            - Path=/product/like/**
+            - Path=/post/detail
+        - id: POST-API
+          uri: lb://POST-API
+          predicates:
+            - Path=/post/like/**
           filters:
-            - name: JwtAuthentication
+            - name: JwtAuthentication 
               args: 
                 headerName: Authorization
                 granted: Bearer
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
+        - id: POST-API
+          uri: lb://POST-API
           predicates:
-            - Path=/product/profile/like/**
-        - id: PRODUCT-API
-          uri: lb://PRODUCT-API
-          predicates:
-            - Path=/product/**
+            - Path=/post/**
           filters:
             - name: JwtAuthentication
               args: 
