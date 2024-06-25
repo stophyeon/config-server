@@ -24,4 +24,4 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     service-url:
-      defaultZone: http://darakbang-discovery-service-1:8761/eureka
+      defaultZone: http://kpaas-discovery-service-1:8761/eureka
