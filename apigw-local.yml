@@ -17,8 +17,10 @@ spring:
           uri: lb://CHAT-API
           predicates:
             - Path=/ws/**
-          filters:
-            - RewritePath=/ws/(?<segment>.*), /$\\{segment}
+        - id: CHAT-API
+          uri: lb://CHAT-API
+          predicates:
+            - Path=/chat/**
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
