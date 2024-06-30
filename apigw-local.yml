@@ -13,6 +13,10 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: CHAT-API
+          uri: lb://CHAT-API
+          predicates:
+            - Path=/ws/**
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
