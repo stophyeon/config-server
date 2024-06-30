@@ -17,6 +17,8 @@ spring:
           uri: lb://CHAT-API
           predicates:
             - Path=/ws/**
+          filters:
+            - RewritePath=/ws/(?<segment>.*), /$\\{segment}
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
