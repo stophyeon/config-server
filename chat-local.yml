@@ -6,7 +6,7 @@ spring:
       on-profile: local
   data:
     mongodb:
-        uri: mongodb://localhost:27017/test?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.10
+        uri: mongodb://localhost:27017/test
   application:
     name: chat-api
 
