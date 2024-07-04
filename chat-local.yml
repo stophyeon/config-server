@@ -6,7 +6,7 @@ spring:
       on-profile: local
   data:
     mongodb:
-        uri: mongodb://localhost:27017/test
+        uri: mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.10
         authentication-database: admin
         username: root
         password: 1234
