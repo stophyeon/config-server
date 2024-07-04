@@ -7,6 +7,9 @@ spring:
   data:
     mongodb:
         uri: mongodb://localhost:27017/test
+        authentication-database: admin
+        username: root
+        password: 1234
   application:
     name: chat-api
 
