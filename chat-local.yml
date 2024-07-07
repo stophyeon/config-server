@@ -4,9 +4,9 @@ spring:
   config:
     activate:
       on-profile: local
-  data:
-    mongodb:
-        uri: mongodb://jjh:1234@127.0.0.1:27017/test?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.10
+  redis:
+    host: localhost
+    port: 6379
         
   application:
     name: chat-api
