@@ -6,11 +6,10 @@ spring:
       on-profile: local
   data:
     mongodb:
-        host: mongodb_boot
+        host: localhost
         port: 27017
         authentication-database: admin
-        username: jjh
-        password: 1234
+        
         database: test
         
   application:
