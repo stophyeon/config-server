@@ -30,7 +30,10 @@ spring:
               args: 
                 headerName: Authorization
                 granted: Bearer
-        
+        - id: MEMBER-API
+          uri: lb://MEMBER-API
+          predicates:
+            - Path=/genderlist/**
         - id: MEMBER-API
           uri: lb://MEMBER-API
           predicates:
@@ -93,7 +96,20 @@ spring:
           uri: lb://MEMBER-API
           predicates:
             - Path=/follow/following/**
-        
+        - id: POST-API
+          uri: lb://POST-API
+          predicates:
+            - Path=/post/page_post/**
+
+        - id: POST-API
+          uri: lb://POST-API
+          predicates:
+            - Path=/post/notices
+
+        - id: POST-API
+          uri: lb://POST-API
+          predicates:
+            - Path=/thumbnailfinal.jpg
         - id: POST-API
           uri: lb://PRODUCT-API
           predicates:
