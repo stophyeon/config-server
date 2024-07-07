@@ -19,10 +19,10 @@ spring:
     
   datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/darakbang?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+      url: jdbc:mysql://223.130.134.4:3308/member?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
       
       username: root
-      password : 990531
+      password : asas1212!
     
   application:
       name: member-api
