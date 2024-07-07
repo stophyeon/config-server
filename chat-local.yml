@@ -6,7 +6,12 @@ spring:
       on-profile: local
   data:
     mongodb:
-        uri: mongodb://jjh:1234@localhost:27017/test?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.10
+        host: localhost
+        port: 27017
+        authentication-database: admin
+        username: jjh
+        password: 1234
+        database: test
         
   application:
     name: chat-api
