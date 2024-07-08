@@ -2,19 +2,11 @@ server:
   port: 5080
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
     consumer:
-      group-id: consumerGroup1
-      enable-auto-commit: true
-      auto-offset-reset: latest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      max-poll-records: 1000
+      bootstrap-servers: localhost:9092
+      group-id: chatting
     producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    template:
-      default-topic: kafkaTest
+      bootstrap-servers: localhost:9092 
   config:
     activate:
       on-profile: local
