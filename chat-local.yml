@@ -10,7 +10,11 @@ spring:
   config:
     activate:
       on-profile: local
-  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/product?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password : 990531
         
   application:
     name: chat-api
