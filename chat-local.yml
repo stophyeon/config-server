@@ -13,7 +13,9 @@ spring:
   data:
     mongodb:
       uri: mongodb://jjh:1234@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.10
-      
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/darakbang?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8    
         
   application:
     name: chat-api
