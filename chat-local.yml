@@ -15,7 +15,7 @@ spring:
       host: 172.17.0.2
       port: 27017
       database: chat
-      username: jjh
+      username: root
       password: 1234
       authentication-database: chat
         
