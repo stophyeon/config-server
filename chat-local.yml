@@ -12,9 +12,7 @@ spring:
       on-profile: local
   data:
     mongodb:
-      host: 172.17.0.2
-      port: 27017
-      database: chat
+      uri: mongodb://127.0.0.1:27017/chat
       username: root
       password: 1234
       authentication-database: chat
