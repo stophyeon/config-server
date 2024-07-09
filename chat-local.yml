@@ -12,10 +12,8 @@ spring:
       on-profile: local
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017/chat
-      username: root
-      password: 1234
-      authentication-database: chat
+      uri: mongodb://jjh:1234@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.10
+      
         
   application:
     name: chat-api
